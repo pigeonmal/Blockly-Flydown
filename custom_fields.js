@@ -164,6 +164,9 @@ CustomFields.eventparam.prototype.onHtmlInputChange_ = function (e) {
 
 
 CustomFields.eventparam.prototype.dispose = function () {
+      if (CustomFields.eventparam.openFieldFlydown_ == this) {
+        CustomFields.eventparam.hide();
+    }
     // Call parent's destructor.
     Blockly.FieldTextInput.prototype.dispose.call(this);
 };
